@@ -1,0 +1,31 @@
+version: "3"
+
+#networks:
+#  web:
+#    external:
+#      name: web
+
+services:
+  nginx:
+    image: ghcr.io/saharadesertfox/react_4_deploy:main
+    restart: always
+    #networks:
+    #  - web
+    #volumes: ./.htpasswd:/etc/nginx/.htpasswd:ro
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    #labels:
+    #  - "traefik.backend=wot"
+    #  - "traefik.docker.network=web"
+    #  - "traefik.frontend.rule=Host:wot.sergeytsaplin.com"
+    #  - "traefik.enable=true"
+    #  - "traefik.port=80"
+    #  - "traefik.default.protocol=http"
+    #  - "traefik.http.routers.wot.entrypoints=websecure"
+    #  - "traefik.http.routers.wot.rule=Host(`wot.sergeytsaplin.com`)"
+    #  - "traefik.http.services.wot.loadbalancer.server.port=80"
+    #  - "traefik.http.routers.wot.rule=Host(`wot.sergeytsaplin.com`)"
+    #  - "traefik.http.routers.wot.tls=true"
+    #  - "traefik.http.routers.wot.tls.certresolver=le"
